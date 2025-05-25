@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seblak Anjayyy | FYS</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon3.png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .typing-effect {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #FF6B6B;
+            width: 0;
+            animation: typing 3.5s steps(40, end) forwards;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #FF4B2B;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #FF416C;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #FF4B2B;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+
+        .custom-checkbox:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        .custom-checkbox input:checked~.checkmark {
+            background-color: #FF4B2B;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .custom-checkbox input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .custom-checkbox .checkmark:after {
+            left: 7px;
+            top: 3px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-pacifico {
+            font-family: 'Pacifico', serif;
+        }
+
+        /* Custom Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #FF4B2B;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @media (max-width: 640px) {
+            .carousel-item {
+                flex: 0 0 100%;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .carousel-item {
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .carousel-item {
+                flex: 0 0 33.333%;
+            }
+        }
+    </style>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#FF4B2B', secondary: '#FF416C' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Loading Animation -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+        <div class="flex flex-col items-center">
+            <div class="w-24 h-24 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <p class="mt-4 text-xl font-semibold text-primary">Loading...</p>
+            <p class="mt-4 text-xl font-semibold text-primary">Seblak Anjayyy | Fitria Yustikasari</p>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center mr-3">
+                        <i class="ri-fire-fill ri-2x text-primary"></i>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-['Pacifico'] text-primary">Seblak Anjayyy Fitria Yustikasari
+                    </h1>
+                </div>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="font-medium text-gray-700 hover:text-primary transition-colors">Beranda</a>
+                    <a href="#products" class="font-medium text-gray-700 hover:text-primary transition-colors">Menu</a>
+                    <a href="#testimonials"
+                        class="font-medium text-gray-700 hover:text-primary transition-colors">Testimoni</a>
+                    <a href="#location"
+                        class="font-medium text-gray-700 hover:text-primary transition-colors">Lokasi</a>
+                    <a href="#contact"
+                        class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan
+                        Sekarang</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button"
+                    class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                    <i class="ri-menu-line ri-2x"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3">
+                <nav class="flex flex-col space-y-3">
+                    <a href="#home"
+                        class="font-medium text-gray-700 hover:text-primary transition-colors py-2">Beranda</a>
+                    <a href="#products"
+                        class="font-medium text-gray-700 hover:text-primary transition-colors py-2">Menu</a>
+                    <a href="#testimonials"
+                        class="font-medium text-gray-700 hover:text-primary transition-colors py-2">Testimoni</a>
+                    <a href="#location"
+                        class="font-medium text-gray-700 hover:text-primary transition-colors py-2">Lokasi</a>
+                    <a href="#contact"
+                        class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap inline-block w-full text-center">Pesan
+                        Sekarang</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center"
+        style="background-image: url('https://readdy.ai/api/search-image?query=delicious%20spicy%20Indonesian%20seblak%20dish%20with%20various%20toppings%20like%20noodles%2C%20crackers%2C%20eggs%2C%20and%20vegetables%2C%20steaming%20hot%20with%20bright%20red%20chili%20sauce%2C%20professionally%20photographed%20with%20dramatic%20lighting%2C%20on%20a%20dark%20background%20with%20steam%20rising&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="w-full md:w-1/2 animate-fade-in" style="animation-delay: 0.3s;">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow typing-effect">Seblak Anjayyy | FYS</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 text-shadow">Sensasi pedas yang bikin ketagihan! Nikmati
+                    seblak dengan berbagai level kepedasan dan es kulkul segar untuk menyeimbangkan rasa.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/62895611909642?text=Halo%20Seblak%20Anjayyy,%20saya%20ingin%20memesan:"
+                        class="bg-primary text-white px-8 py-4 !rounded-button font-medium hover:bg-opacity-90 transition-colors flex items-center justify-center animate-pulse whitespace-nowrap">
+                        <i class="ri-whatsapp-fill ri-lg mr-2"></i>
+                        Pesan via WhatsApp
+                    </a>
+                    <a href="https://gofood.link/a/C77jE1U"
+                        class="bg-white text-green-500 px-8 py-4 !rounded-button font-medium hover:bg-gray-90 transition-colors flex items-center justify-center animate-pulse whitespace-nowrap">
+                        <i class="ri-motorbike-fill ri-lg mr-2"></i>
+                        Pesan via GoFood
+                    </a>
+                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                        class="bg-white text-primary px-8 py-4 !rounded-button font-medium hover:bg-gray-90 transition-colors flex items-center justify-center animate-pulse whitespace-nowrap">
+                        <i class="ri-shopping-bag-fill ri-lg mr-2"></i>
+                        Pesan via ShopeeFood
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Floating Social Media Icons -->
+        <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-30 flex flex-col gap-3">
+            <a href="https://spf.shopee.co.id/2fyrig86qo"
+                class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors animate-float"
+                style="animation-delay: 0s;" target="_blank">
+                <i class="ri-shopping-cart-fill ri-lg text-orange-500"></i>
+            </a>
+            <a href="https://gofood.link/a/C77jE1U"
+                class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors animate-float"
+                style="animation-delay: 0.3s;" target="_blank">
+                <i class="ri-motorbike-fill ri-lg text-green-500"></i>
+            </a>
+            <a href="mailto:fitriayustikasari759@gmail.com"
+                class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors animate-float"
+                style="animation-delay: 0.6s;" target="_blank">
+                <i class="ri-mail-fill ri-lg text-blue-500"></i>
+            </a>
+            <a href="https://wa.me/62895611909642"
+                class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors animate-float"
+                style="animation-delay: 0.9s;" target="_blank">
+                <i class="ri-whatsapp-fill ri-lg text-green-600"></i>
+            </a>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/2 animate-fade-in" style="animation-delay: 0.3s;">
+                    <img src="favicon2.png"
+                        alt="Seblak Anjayyy Variety" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div class="w-full md:w-1/2 animate-fade-in" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Tentang Seblak Anjayyy</h2>
+                    <p class="text-lg text-gray-700 mb-6">Seblak Anjayyy | FYS hadir untuk memanjakan lidah
+                        Anda dengan cita rasa pedas yang khas dan nikmat. Kami menggunakan bahan-bahan berkualitas dan
+                        rempah pilihan untuk menciptakan seblak yang lezat dan menggugah selera.</p>
+                    <p class="text-lg text-gray-700 mb-6">Nikmati berbagai varian seblak mulai dari level pedas yang
+                        bisa disesuaikan dengan selera Anda. Kami juga menyediakan Es Kulkul segar yang cocok untuk
+                        menyeimbangkan sensasi pedas dari seblak.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-full mr-3">
+                                <i class="ri-fire-fill ri-lg text-primary"></i>
+                            </div>
+                            <span class="text-gray-800 font-medium">Level Pedas Bervariasi</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-3">
+                                <i class="ri-shield-check-fill ri-lg text-blue-500"></i>
+                            </div>
+                            <span class="text-gray-800 font-medium">Bahan Berkualitas</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full mr-3">
+                                <i class="ri-truck-fill ri-lg text-green-500"></i>
+                            </div>
+                            <span class="text-gray-800 font-medium">Pengiriman Cepat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Menu Favorit Kami</h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">Nikmati berbagai pilihan menu seblak dan es kulkul
+                    yang lezat dan menggugah selera. Semua menu dibuat dengan bahan berkualitas dan rempah pilihan.</p>
+            </div>
+            <!-- Product Carousel -->
+            <div class="carousel-container relative">
+                <div class="carousel-track" id="product-carousel">
+                    <!-- Product 1 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=spicy%20Indonesian%20seblak%20with%20meatballs%2C%20quail%20eggs%2C%20and%20vegetables%20in%20a%20bowl%20with%20bright%20red%20chili%20sauce%2C%20steam%20rising%2C%20professional%20food%20photography%20with%20soft%20lighting%20on%20dark%20background&width=400&height=300&seq=3&orientation=landscape"
+                                alt="Seblak Original" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Original</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-gray-300"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Level 2</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Seblak original dengan kerupuk, bakso, telur, dan mie.
+                                    Cita rasa pedas yang khas dan menggugah selera.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 15.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=spicy%20Indonesian%20seblak%20with%20seafood%20toppings%20like%20shrimp%20and%20squid%2C%20vegetables%20in%20a%20bowl%20with%20bright%20red%20chili%20sauce%2C%20steam%20rising%2C%20professional%20food%20photography%20with%20soft%20lighting%20on%20dark%20background&width=400&height=300&seq=4&orientation=landscape"
+                                alt="Seblak Seafood" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Seafood</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Level 3</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Seblak dengan tambahan udang, cumi, dan seafood lainnya.
+                                    Perpaduan rasa pedas dan seafood yang lezat.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 25.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=spicy%20Indonesian%20seblak%20with%20cheese%20topping%20melting%20on%20top%2C%20with%20meatballs%20and%20vegetables%20in%20a%20bowl%20with%20bright%20red%20chili%20sauce%2C%20steam%20rising%2C%20professional%20food%20photography%20with%20soft%20lighting%20on%20dark%20background&width=400&height=300&seq=5&orientation=landscape"
+                                alt="Seblak Keju" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Keju</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Level 4</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Seblak dengan tambahan keju mozzarella yang meleleh.
+                                    Perpaduan rasa pedas dan gurih keju yang menggoda.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 20.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=spicy%20Indonesian%20seblak%20with%20chicken%20pieces%2C%20quail%20eggs%2C%20and%20vegetables%20in%20a%20bowl%20with%20bright%20red%20chili%20sauce%2C%20steam%20rising%2C%20professional%20food%20photography%20with%20soft%20lighting%20on%20dark%20background&width=400&height=300&seq=6&orientation=landscape"
+                                alt="Seblak Ayam" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Ayam</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Level 3</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Seblak dengan tambahan potongan ayam yang gurih. Rasa
+                                    pedas yang khas dengan tambahan protein ayam.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 18.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=spicy%20Indonesian%20seblak%20with%20beef%20slices%2C%20quail%20eggs%2C%20and%20vegetables%20in%20a%20bowl%20with%20bright%20red%20chili%20sauce%2C%20steam%20rising%2C%20professional%20food%20photography%20with%20soft%20lighting%20on%20dark%20background&width=400&height=300&seq=7&orientation=landscape"
+                                alt="Seblak Sapi" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Sapi</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Level 5</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Seblak dengan tambahan irisan daging sapi. Perpaduan rasa
+                                    pedas dan gurih daging sapi yang lezat.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 22.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=refreshing%20Indonesian%20Es%20Kulkul%20dessert%20drink%20with%20colorful%20ingredients%20like%20coconut%20milk%2C%20syrup%2C%20and%20jelly%20in%20a%20clear%20glass%2C%20beautifully%20garnished%2C%20professional%20food%20photography%20with%20bright%20lighting%20on%20light%20background&width=400&height=300&seq=8&orientation=landscape"
+                                alt="Es Kulkul Original" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Es Kulkul Original</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-cup-fill text-blue-500"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Minuman Segar</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Es Kulkul dengan campuran santan, sirup, dan jelly yang
+                                    segar. Cocok untuk menyegarkan setelah makan seblak pedas.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 10.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 7 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=refreshing%20Indonesian%20Es%20Kulkul%20dessert%20drink%20with%20durian%20flavor%2C%20coconut%20milk%2C%20and%20jelly%20in%20a%20clear%20glass%2C%20beautifully%20garnished%2C%20professional%20food%20photography%20with%20bright%20lighting%20on%20light%20background&width=400&height=300&seq=9&orientation=landscape"
+                                alt="Es Kulkul Durian" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Es Kulkul Durian</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-cup-fill text-blue-500"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Minuman Segar</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Es Kulkul dengan tambahan durian asli. Perpaduan rasa
+                                    manis, gurih, dan aroma durian yang khas.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 15.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 8 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=refreshing%20Indonesian%20Es%20Kulkul%20dessert%20drink%20with%20chocolate%20flavor%2C%20coconut%20milk%2C%20and%20jelly%20in%20a%20clear%20glass%2C%20beautifully%20garnished%2C%20professional%20food%20photography%20with%20bright%20lighting%20on%20light%20background&width=400&height=300&seq=10&orientation=landscape"
+                                alt="Es Kulkul Coklat" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Es Kulkul Coklat</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-cup-fill text-blue-500"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Minuman Segar</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Es Kulkul dengan tambahan coklat premium. Perpaduan rasa
+                                    manis coklat dan segar yang menggoda.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 12.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 9 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=refreshing%20Indonesian%20Es%20Kulkul%20dessert%20drink%20with%20avocado%20flavor%2C%20coconut%20milk%2C%20and%20jelly%20in%20a%20clear%20glass%2C%20beautifully%20garnished%2C%20professional%20food%20photography%20with%20bright%20lighting%20on%20light%20background&width=400&height=300&seq=11&orientation=landscape"
+                                alt="Es Kulkul Alpukat" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Es Kulkul Alpukat</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-cup-fill text-blue-500"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Minuman Segar</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Es Kulkul dengan tambahan alpukat segar. Perpaduan rasa
+                                    creamy alpukat dan segar yang menyehatkan.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 13.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 10 -->
+                    <div class="carousel-item p-4">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
+                            <img src="https://readdy.ai/api/search-image?query=spicy%20Indonesian%20seblak%20with%20mixed%20toppings%20including%20meatballs%2C%20sausages%2C%20quail%20eggs%2C%20and%20vegetables%20in%20a%20bowl%20with%20bright%20red%20chili%20sauce%2C%20steam%20rising%2C%20professional%20food%20photography%20with%20soft%20lighting%20on%20dark%20background&width=400&height=300&seq=12&orientation=landscape"
+                                alt="Seblak Komplit" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Komplit</h3>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex">
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                        <i class="ri-fire-fill text-primary"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600">Level 4</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Seblak dengan semua topping lengkap. Bakso, sosis, telur
+                                    puyuh, mie, kerupuk, dan sayuran. Porsi jumbo!</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-primary font-bold text-xl">Rp 30.000</span>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo"
+                                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button id="prev-btn"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg z-10 ml-2">
+                    <i class="ri-arrow-left-s-line ri-lg text-gray-700"></i>
+                </button>
+                <button id="next-btn"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg z-10 mr-2">
+                    <i class="ri-arrow-right-s-line ri-lg text-gray-700"></i>
+                </button>
+            </div>
+            <!-- View All Products Button -->
+            <div class="text-center mt-10">
+                <a href="#contact"
+                    class="inline-flex items-center bg-white border border-primary text-primary px-6 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                    <span>Lihat Semua Menu</span>
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Special Offers Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/2 animate-fade-in" style="animation-delay: 0.3s;">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Promo Spesial</h2>
+                    <p class="text-lg text-gray-700 mb-6">Nikmati berbagai penawaran spesial dari Seblak Anjayyy + Es
+                        Kulkul FYS. Dapatkan diskon dan paket hemat untuk memuaskan selera Anda.</p>
+                    <div class="bg-gradient-to-r from-primary to-secondary p-6 rounded-lg text-white mb-6">
+                        <h3 class="text-xl font-bold mb-2">Paket Hemat Duo</h3>
+                        <p class="mb-4">1 Seblak (pilihan) + 1 Es Kulkul (pilihan)</p>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold">Rp 25.000</span>
+                            <span class="ml-2 line-through text-gray-300">Rp 30.000</span>
+                            <span class="ml-2 bg-white text-primary px-2 py-1 rounded-full text-xs font-bold">Hemat
+                                17%</span>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 p-6 rounded-lg text-white">
+                        <h3 class="text-xl font-bold mb-2">Paket Keluarga</h3>
+                        <p class="mb-4">3 Seblak (pilihan) + 3 Es Kulkul (pilihan)</p>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold">Rp 70.000</span>
+                            <span class="ml-2 line-through text-gray-300">Rp 90.000</span>
+                            <span class="ml-2 bg-white text-orange-500 px-2 py-1 rounded-full text-xs font-bold">Hemat
+                                22%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 animate-fade-in" style="animation-delay: 0.6s;">
+                    <img src="https://readdy.ai/api/search-image?query=multiple%20bowls%20of%20spicy%20Indonesian%20seblak%20and%20glasses%20of%20refreshing%20Es%20Kulkul%20drinks%20arranged%20on%20a%20table%2C%20family%20meal%20setting%2C%20steam%20rising%20from%20hot%20dishes%2C%20professional%20food%20photography%20with%20soft%20natural%20lighting&width=600&height=600&seq=13&orientation=squarish"
+                        alt="Paket Promo Seblak" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Apa Kata Pelanggan Kami</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <div class="flex">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </div>
+                    <span class="ml-2 text-gray-700 font-medium">4.9/5 (1000+ review)</span>
+                </div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">Lihat apa yang dikatakan pelanggan kami tentang
+                    pengalaman mereka menikmati Seblak Anjayyy | FYS.</p>
+            </div>
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="testimonials-container">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg p-6 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Dian Sastrowardoyo</h4>
+                            <div class="flex">
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Seblak paling enak yang pernah saya coba! Level pedasnya bisa disesuaikan
+                        dan rasanya tetap mantap. Es Kulkul-nya juga segar banget, cocok buat netralisir pedas.
+                        Recommended banget!"</p>
+                    <p class="text-gray-500 text-sm mt-4">25 Mei 2025</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg p-6 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Reza Rahadian</h4>
+                            <div class="flex">
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Seblak Seafood-nya juara! Seafood-nya segar dan porsinya banyak.
+                        Pelayanannya juga ramah dan cepat. Pasti bakal order lagi!"</p>
+                    <p class="text-gray-500 text-sm mt-4">23 Mei 2025</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg p-6 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Raisa Andriana</h4>
+                            <div class="flex">
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Es Kulkul Durian-nya enak banget! Rasa duriannya berasa dan tidak terlalu
+                        manis. Seblak-nya juga enak, level 3 sudah cukup bikin keringetan. Harganya juga worth it!"</p>
+                    <p class="text-gray-500 text-sm mt-4">20 Mei 2025</p>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="bg-white rounded-lg p-6 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Isyana Sarasvati</h4>
+                            <div class="flex">
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-half-fill text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Paket Hemat Duo-nya worth it banget! Seblak-nya enak dan Es Kulkul-nya
+                        segar. Pengirimannya juga cepat dan makanannya masih hangat sampai rumah."</p>
+                    <p class="text-gray-500 text-sm mt-4">18 Mei 2025</p>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="bg-white rounded-lg p-6 shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Nicholas Saputra</h4>
+                            <div class="flex">
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Seblak Komplit-nya mantap! Porsinya banyak dan isinya lengkap. Level 4
+                        pedasnya pas, bikin ketagihan. Pasti bakal jadi langganan nih!"</p>
+                    <p class="text-gray-500 text-sm mt-4">15 Mei 2025</p>
+                </div>
+                <!-- Add Review Form -->
+                <div class="mt-12 bg-white rounded-lg p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Tambahkan Review Anda</h3>
+                    <form id="review-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nama</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="rating" class="block text-gray-700 font-medium mb-2">Rating</label>
+                                <div class="flex items-center space-x-1">
+                                    <button type="button" class="rating-star text-gray-300 text-2xl focus:outline-none"
+                                        data-rating="1">★</button>
+                                    <button type="button" class="rating-star text-gray-300 text-2xl focus:outline-none"
+                                        data-rating="2">★</button>
+                                    <button type="button" class="rating-star text-gray-300 text-2xl focus:outline-none"
+                                        data-rating="3">★</button>
+                                    <button type="button" class="rating-star text-gray-300 text-2xl focus:outline-none"
+                                        data-rating="4">★</button>
+                                    <button type="button" class="rating-star text-gray-300 text-2xl focus:outline-none"
+                                        data-rating="5">★</button>
+                                    <input type="hidden" id="rating" name="rating" value="0" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="comment" class="block text-gray-700 font-medium mb-2">Komentar</label>
+                            <textarea id="comment" name="comment" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Kirim
+                            Review</button>
+                    </form>
+                </div>
+            </div>
+    </section>
+    <!-- Location Section -->
+    <section id="location" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Lokasi Kami</h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">Kunjungi toko kami untuk menikmati seblak dan es
+                    kulkul langsung di tempat. Atau pesan online untuk pengiriman cepat ke lokasi Anda.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="w-full md:w-1/2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5791666031387!2d106.56699147485761!3d-6.321847193690714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e3e2d60ea623%3A0x4fc5e5020a970a83!2sGriya%20Parung%20Panjang!5e0!3m2!1sen!2sid!4v1708936546899!5m2!1sen!2sid"
+                        class="w-full h-full min-h-[400px] rounded-lg shadow-lg" style="border:0;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="bg-white rounded-lg p-6 shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Informasi Toko</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-map-pin-fill text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Alamat</h4>
+                                    <p class="text-gray-700">Griya parung panjang blok B 3 F no 02 desa. Kabasiran
+                                        kec.parung panjang kab. Bogor, 16360.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-time-fill text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Jam Operasional</h4>
+                                    <p class="text-gray-700">Senin - Minggu: 10:00 - 21:00 WIB</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-whatsapp-fill text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">WhatsApp</h4>
+                                    <p class="text-gray-700">0895611909642</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-mail-fill text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-700">fitriayustikasari759@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-orange-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-shopping-cart-fill text-orange-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Shopee</h4>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo" class="text-primary hover:underline"
+                                        target="_blank">spf.shopee.co.id/2fyrig86qo</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-motorbike-fill text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">GoFood</h4>
+                                    <a href="https://gofood.link/a/C77jE1U" class="text-primary hover:underline"
+                                        target="_blank">gofood.link/a/C77jE1U</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">Ada pertanyaan atau ingin memesan? Hubungi kami
+                    melalui salah satu channel di bawah ini.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://wa.me/62895611909642"
+                    class="bg-white rounded-lg p-6 shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow"
+                    target="_blank">
+                    <div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mb-4">
+                        <i class="ri-whatsapp-fill ri-2x text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">WhatsApp</h3>
+                    <p class="text-gray-700 mb-4">Pesan langsung melalui WhatsApp untuk respon cepat.</p>
+                    <span class="text-primary font-medium">0895611909642</span>
+                </a>
+                <a href="mailto:fitriayustikasari759@gmail.com"
+                    class="bg-white rounded-lg p-6 shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow"
+                    target="_blank">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-mail-fill ri-2x text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Email</h3>
+                    <p class="text-gray-700 mb-4">Kirim email untuk pertanyaan atau pesanan khusus.</p>
+                    <span class="text-primary font-medium">fitriayustikasari759@gmail.com</span>
+                </a>
+                <a href="https://gofood.link/a/C77jE1U"
+                    class="bg-white rounded-lg p-6 shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow"
+                    target="_blank">
+                    <div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mb-4">
+                        <i class="ri-motorbike-fill ri-2x text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">GoFood</h3>
+                    <p class="text-gray-700 mb-4">Pesan melalui GoFood untuk pengiriman cepat.</p>
+                    <span class="text-primary font-medium">Seblak Anjayyy | FYS</span>
+                </a>
+                <a href="https://spf.shopee.co.id/2fyrig86qo"
+                    class="bg-white rounded-lg p-6 shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow"
+                    target="_blank">
+                    <div class="w-16 h-16 flex items-center justify-center bg-orange-100 rounded-full mb-4">
+                        <i class="ri-shopping-cart-fill ri-2x text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Shopee</h3>
+                    <p class="text-gray-700 mb-4">Pesan melalui Shopee untuk pengiriman ke seluruh Indonesia.</p>
+                    <span class="text-primary font-medium">Seblak Anjayyy | FYS</span>
+                </a>
+            </div>
+            <!-- Order Form -->
+            <div class="mt-12 bg-white rounded-lg p-8 shadow-md">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Formulir Pemesanan</h3>
+                <form id="order-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="order-name" class="block text-gray-700 font-medium mb-2">Nama</label>
+                            <input type="text" id="order-name" name="order-name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                required>
+                        </div>
+                        <div>
+                            <label for="order-phone" class="block text-gray-700 font-medium mb-2">Nomor WhatsApp</label>
+                            <input type="tel" id="order-phone" name="order-phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="order-address" class="block text-gray-700 font-medium mb-2">Alamat
+                            Pengiriman</label>
+                        <textarea id="order-address" name="order-address" rows="3"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Pilih Menu</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Seblak Original (Rp 15.000)
+                                    <input type="checkbox" name="menu" value="Seblak Original">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Seblak Seafood (Rp 25.000)
+                                    <input type="checkbox" name="menu" value="Seblak Seafood">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Seblak Keju (Rp 20.000)
+                                    <input type="checkbox" name="menu" value="Seblak Keju">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Seblak Ayam (Rp 18.000)
+                                    <input type="checkbox" name="menu" value="Seblak Ayam">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Seblak Sapi (Rp 22.000)
+                                    <input type="checkbox" name="menu" value="Seblak Sapi">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Seblak Komplit (Rp 30.000)
+                                    <input type="checkbox" name="menu" value="Seblak Komplit">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Es Kulkul Original (Rp 10.000)
+                                    <input type="checkbox" name="menu" value="Es Kulkul Original">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Es Kulkul Durian (Rp 15.000)
+                                    <input type="checkbox" name="menu" value="Es Kulkul Durian">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Es Kulkul Coklat (Rp 12.000)
+                                    <input type="checkbox" name="menu" value="Es Kulkul Coklat">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="custom-checkbox">
+                                    Es Kulkul Alpukat (Rp 13.000)
+                                    <input type="checkbox" name="menu" value="Es Kulkul Alpukat">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Level Pedas (untuk Seblak)</label>
+                        <div class="flex items-center space-x-2">
+                            <input type="range" id="spicy-level" name="spicy-level" min="1" max="5" value="3"
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <span id="spicy-level-value" class="text-gray-700 font-medium">Level 3</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="order-notes" class="block text-gray-700 font-medium mb-2">Catatan Tambahan</label>
+                        <textarea id="order-notes" name="order-notes" rows="3"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Metode Pembayaran</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="flex items-center">
+                                <input type="radio" id="payment-cod" name="payment" value="COD" class="hidden" checked>
+                                <label for="payment-cod"
+                                    class="flex items-center p-4 border border-gray-300 rounded-md cursor-pointer hover:border-primary transition-colors">
+                                    <div
+                                        class="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center mr-3">
+                                        <div class="w-3 h-3 rounded-full bg-primary payment-radio"></div>
+                                    </div>
+                                    <span class="text-gray-700">Cash on Delivery</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="payment-transfer" name="payment" value="Transfer"
+                                    class="hidden">
+                                <label for="payment-transfer"
+                                    class="flex items-center p-4 border border-gray-300 rounded-md cursor-pointer hover:border-primary transition-colors">
+                                    <div
+                                        class="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center mr-3">
+                                        <div class="w-3 h-3 rounded-full bg-transparent payment-radio"></div>
+                                    </div>
+                                    <span class="text-gray-700">Transfer Bank</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="payment-ewallet" name="payment" value="E-Wallet" class="hidden">
+                                <label for="payment-ewallet"
+                                    class="flex items-center p-4 border border-gray-300 rounded-md cursor-pointer hover:border-primary transition-colors">
+                                    <div
+                                        class="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center mr-3">
+                                        <div class="w-3 h-3 rounded-full bg-transparent payment-radio"></div>
+                                    </div>
+                                    <span class="text-gray-700">E-Wallet</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Kirim
+                        Pesanan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center mr-3">
+                            <i class="ri-fire-fill ri-2x text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-['Pacifico'] text-white">Seblak Anjayyy</h2>
+                    </div>
+                    <p class="text-gray-400 mb-4">Sensasi pedas yang bikin ketagihan! Nikmati seblak dengan berbagai
+                        level kepedasan dan es kulkul segar untuk menyeimbangkan rasa.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-tiktok-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Menu Kami</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak
+                                Original</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak
+                                Seafood</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Keju</a>
+                        </li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Ayam</a>
+                        </li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul
+                                Original</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul
+                                Durian</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Tautan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="#testimonials"
+                                class="text-gray-400 hover:text-white transition-colors">Testimoni</a></li>
+                        <li><a href="#location" class="text-gray-400 hover:text-white transition-colors">Lokasi</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontak</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-fill mr-3 mt-1"></i>
+                            <span class="text-gray-400">Griya parung panjang blok B 3 F no 02 desa. Kabasiran kec.parung
+                                panjang kab. Bogor, 16360.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-phone-fill mr-3"></i>
+                            <span class="text-gray-400">0895611909642</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-mail-fill mr-3"></i>
+                            <span class="text-gray-400">fitriayustikasari759@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-time-fill mr-3"></i>
+                            <span class="text-gray-400">Senin - Minggu: 07:00 - 21:00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-center md:text-left">&copy; 2025 Iskandar SI. All rights
+                    reserved.</p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Kebijakan Privasi</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+    <!-- Scripts -->
+    <script id="loading-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Loading Screen
+            setTimeout(function () {
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transition = 'opacity 0.5s ease';
+                setTimeout(function () {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+    </script>
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', function () {
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+                }
+            });
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+                });
+            });
+        });
+    </script>
+    <script id="carousel-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Product Carousel
+            const carousel = document.getElementById('product-carousel');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+            let itemWidth;
+            let itemsPerView;
+            function updateCarouselLayout() {
+                const viewportWidth = window.innerWidth;
+                if (viewportWidth < 640) {
+                    itemsPerView = 1;
+                } else if (viewportWidth < 1024) {
+                    itemsPerView = 2;
+                } else {
+                    itemsPerView = 3;
+                }
+                const carouselItems = carousel.querySelectorAll('.carousel-item');
+                carouselItems.forEach(item => {
+                    item.style.flex = `0 0 ${100 / itemsPerView}%`;
+                });
+                itemWidth = carousel.offsetWidth / itemsPerView;
+                moveCarousel();
+            }
+            function moveCarousel() {
+                const maxIndex = carousel.children.length - itemsPerView;
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            }
+            function nextSlide() {
+                const maxIndex = carousel.children.length - itemsPerView;
+                currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+                moveCarousel();
+            }
+            function prevSlide() {
+                const maxIndex = carousel.children.length - itemsPerView;
+                currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+                moveCarousel();
+            }
+            // Initialize carousel
+            updateCarouselLayout();
+            window.addEventListener('resize', updateCarouselLayout);
+            // Auto slide
+            let autoSlide = setInterval(nextSlide, 5000);
+            // Manual controls
+            nextBtn.addEventListener('click', function () {
+                clearInterval(autoSlide);
+                nextSlide();
+                autoSlide = setInterval(nextSlide, 5000);
+            });
+            prevBtn.addEventListener('click', function () {
+                clearInterval(autoSlide);
+                prevSlide();
+                autoSlide = setInterval(nextSlide, 5000);
+            });
+        });
+    </script>
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Back to Top Button
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script id="review-form-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Rating Stars
+            const ratingStars = document.querySelectorAll('.rating-star');
+            const ratingInput = document.getElementById('rating');
+            ratingStars.forEach(star => {
+                star.addEventListener('click', function () {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    ratingInput.value = rating;
+                    // Update star colors
+                    ratingStars.forEach(s => {
+                        const starRating = parseInt(s.getAttribute('data-rating'));
+                        if (starRating <= rating) {
+                            s.classList.remove('text-gray-300');
+                            s.classList.add('text-yellow-400');
+                        } else {
+                            s.classList.remove('text-yellow-400');
+                            s.classList.add('text-gray-300');
+                        }
+                    });
+                });
+            });
+            // Review Form Submission
+            const reviewForm = document.getElementById('review-form');
+            const testimonialContainer = document.getElementById('testimonials-container');
+            reviewForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const rating = document.getElementById('rating').value;
+                const comment = document.getElementById('comment').value;
+                if (name && rating > 0 && comment) {
+                    // Create new testimonial
+                    const newTestimonial = document.createElement('div');
+                    newTestimonial.className = 'bg-white rounded-lg p-6 shadow-md testimonial-card';
+                    // Get current date
+                    const today = new Date();
+                    const date = today.getDate() + ' ' +
+                        ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'][today.getMonth()] + ' ' +
+                        today.getFullYear();
+                    // Generate stars HTML
+                    let starsHTML = '';
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= rating) {
+                            starsHTML += '<i class="ri-star-fill text-yellow-400"></i>';
+                        } else {
+                            starsHTML += '<i class="ri-star-fill text-gray-300"></i>';
+                        }
+                    }
+                    // Set testimonial HTML
+                    newTestimonial.innerHTML = `
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+<i class="ri-user-fill text-gray-500"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">${name}</h4>
+<div class="flex">
+${starsHTML}
+</div>
+</div>
+</div>
+<p class="text-gray-700">"${comment}"</p>
+<p class="text-gray-500 text-sm mt-4">${date}</p>
+`;
+                    // Add new testimonial to the beginning of the container
+                    testimonialContainer.insertBefore(newTestimonial, testimonialContainer.firstChild);
+                    // Reset form
+                    reviewForm.reset();
+                    ratingStars.forEach(s => {
+                        s.classList.remove('text-yellow-400');
+                        s.classList.add('text-gray-300');
+                    });
+                    // Show success message
+                    alert('Terima kasih atas review Anda!');
+                } else {
+                    alert('Mohon lengkapi semua field dan berikan rating.');
+                }
+            });
+        });
+    </script>
+    <script id="order-form-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Spicy Level Slider
+            const spicyLevelSlider = document.getElementById('spicy-level');
+            const spicyLevelValue = document.getElementById('spicy-level-value');
+            spicyLevelSlider.addEventListener('input', function () {
+                spicyLevelValue.textContent = `Level ${this.value}`;
+            });
+            // Payment Method Selection
+            const paymentRadios = document.querySelectorAll('input[name="payment"]');
+            const paymentLabels = document.querySelectorAll('label[for^="payment-"]');
+            paymentRadios.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    // Reset all labels
+                    paymentLabels.forEach(label => {
+                        label.classList.remove('border-primary');
+                        const radioIndicator = label.querySelector('.payment-radio');
+                        radioIndicator.classList.remove('bg-primary');
+                        radioIndicator.classList.add('bg-transparent');
+                    });
+                    // Highlight selected label
+                    if (this.checked) {
+                        const label = document.querySelector(`label[for="${this.id}"]`);
+                        label.classList.add('border-primary');
+                        const radioIndicator = label.querySelector('.payment-radio');
+                        radioIndicator.classList.remove('bg-transparent');
+                        radioIndicator.classList.add('bg-primary');
+                    }
+                });
+            });
+            // Initialize payment method display
+            document.getElementById('payment-cod').dispatchEvent(new Event('change'));
+            // Order Form Submission
+            const orderForm = document.getElementById('order-form');
+            orderForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('order-name').value;
+                const phone = document.getElementById('order-phone').value;
+                const address = document.getElementById('order-address').value;
+                // Get selected menu items
+                const menuCheckboxes = document.querySelectorAll('input[name="menu"]:checked');
+                const selectedMenus = Array.from(menuCheckboxes).map(checkbox => checkbox.value);
+                if (name && phone && address && selectedMenus.length > 0) {
+                    // Prepare WhatsApp message
+                    let message = `Halo Seblak Anjayyy, saya ingin memesan:%0A%0A`;
+                    message += `Nama: ${name}%0A`;
+                    message += `No. HP: ${phone}%0A`;
+                    message += `Alamat: ${address}%0A%0A`;
+                    message += `Pesanan:%0A`;
+                    selectedMenus.forEach(menu => {
+                        message += `- ${menu}%0A`;
+                    });
+                    // Add spicy level if ordering seblak
+                    const hasSeblak = selectedMenus.some(menu => menu.includes('Seblak'));
+                    if (hasSeblak) {
+                        message += `%0ALevel Pedas: ${spicyLevelSlider.value}%0A`;
+                    }
+                    // Add payment method
+                    const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+                    message += `%0AMetode Pembayaran: ${paymentMethod}%0A`;
+                    // Add notes if any
+                    const notes = document.getElementById('order-notes').value;
+                    if (notes) {
+                        message += `%0ACatatan: ${notes}%0A`;
+                    }
+                    // Redirect to WhatsApp
+                    window.open(`https://wa.me/62895611909642?text=${message}`, '_blank');
+                    // Reset form
+                    orderForm.reset();
+                    document.getElementById('payment-cod').checked = true;
+                    document.getElementById('payment-cod').dispatchEvent(new Event('change'));
+                    spicyLevelSlider.value = 3;
+                    spicyLevelValue.textContent = 'Level 3';
+                } else {
+                    alert('Mohon lengkapi semua field dan pilih minimal satu menu.');
+                }
+            });
+        });
+    </script>
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth Scroll for Navigation Links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
