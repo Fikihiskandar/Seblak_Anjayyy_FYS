@@ -81,8 +81,6 @@ Untuk pemesanan, kerjasama, atau informasi lebih lanjut, silakan hubungi:
 
 Untuk Jasa Pembuatan Website, kerjasama, atau informasi lebih lanjut, silakan hubungi:
 
-* Email: 
-
 * **Hak Cipta:** Fikih Nur Iskandar | Information System | Unpam.
 * **WhatshApp:** 085711211910.
 * **Email:** [fikihiskandar30@gmail.com](mailto:fikihiskandar30@gmail.com)
