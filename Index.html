@@ -288,6 +288,18 @@
                 flex: 0 0 33.333%;
             }
         }
+
+        /* Typing Animation */
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .typing-text {
+            border-right: 2px solid #FF4B2B;
+            animation: blink 0.7s step-end infinite;
+        }
     </style>
     <script>tailwind.config = { theme: { extend: { colors: { primary: '#FF4B2B', secondary: '#FF416C' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
 </head>
@@ -310,7 +322,8 @@
                     <div class="w-12 h-12 flex items-center justify-center mr-3">
                         <i class="ri-fire-fill ri-2x text-primary"></i>
                     </div>
-                    <h1 class="text-2xl md:text-3xl font-['Pacifico'] text-primary">Seblak Anjayyy - Fys
+                    <h1 class="text-2xl md:text-3xl font-['Pacifico'] text-primary">
+                        <span id="typing-text" class="typing-text"></span>
                     </h1>
                 </div>
                 <!-- Desktop Navigation -->
@@ -370,7 +383,7 @@
                     <a href="https://gofood.link/a/C77jE1U"
                         class="bg-white text-green-500 px-8 py-4 !rounded-button font-medium hover:bg-gray-90 transition-colors flex items-center justify-center animate-pulse whitespace-nowrap">
                         <i class="ri-motorbike-fill ri-lg mr-2"></i>
-                        Pesan via GoFood
+                        Pesan via GoFoodb
                     </a>
                     <a href="https://spf.shopee.co.id/2fyrig86qo"
                         class="bg-white text-primary px-8 py-4 !rounded-button font-medium hover:bg-gray-90 transition-colors flex items-center justify-center animate-pulse whitespace-nowrap">
@@ -457,8 +470,8 @@
                     <!-- Product 1 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="seblakspesial.jpg"
-                                alt="Seblak Original" class="w-full h-48 object-cover object-top">
+                            <img src="seblakspesial.jpg" alt="Seblak Original"
+                                class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Special Komplit</h3>
                                 <div class="flex items-center mb-3">
@@ -469,7 +482,8 @@
                                     </div>
                                     <span class="ml-2 text-sm text-gray-600">Level 3 - Sangat Pedas</span>
                                 </div>
-                                <p class="text-gray-700 mb-4">Seblak original dengan Kwetiau, kerupuk, makaroni, udang, sayuran, dumpling, sosis, bakso, tulang, ceker.
+                                <p class="text-gray-700 mb-4">Seblak original dengan Kwetiau, kerupuk, makaroni, udang,
+                                    sayuran, dumpling, sosis, bakso, tulang, ceker.
                                     Cita rasa pedas yang khas dan menggugah selera.</p>
                                 <div class="flex items-center justify-between">
                                     <span class="text-primary font-bold text-xl">Rp 19.500</span>
@@ -482,8 +496,7 @@
                     <!-- Product 2 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="seblakbiasa.jpg"
-                                alt="Seblak Seafood" class="w-full h-48 object-cover object-top">
+                            <img src="seblakbiasa.jpg" alt="Seblak Seafood" class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Biasa</h3>
                                 <div class="flex items-center mb-3">
@@ -494,7 +507,8 @@
                                     </div>
                                     <span class="ml-2 text-sm text-gray-600">Level 1 - Tidak Pedas</span>
                                 </div>
-                                <p class="text-gray-700 mb-4">Seblak dengan sayuran, Kwetiau, kerupuk, makaroni, sosis, bakso dan bahan lainnya.
+                                <p class="text-gray-700 mb-4">Seblak dengan sayuran, Kwetiau, kerupuk, makaroni, sosis,
+                                    bakso dan bahan lainnya.
                                     Perpaduan rasa yang lezat.</p>
                                 <div class="flex items-center justify-between">
                                     <span class="text-primary font-bold text-xl">Rp 14.000</span>
@@ -507,8 +521,7 @@
                     <!-- Product 3 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="seblakseafood.jpg"
-                                alt="Seblak Keju" class="w-full h-48 object-cover object-top">
+                            <img src="seblakseafood.jpg" alt="Seblak Keju" class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Seafood</h3>
                                 <div class="flex items-center mb-3">
@@ -520,7 +533,8 @@
                                     </div>
                                     <span class="ml-2 text-sm text-gray-600">Level 2 - Pedas Sedang</span>
                                 </div>
-                                <p class="text-gray-700 mb-4">Seblak dengan tambahan seafood (udang/dumpling) udang yang lezat, Kwetiau, kerupuk, makaroni, sayuran, sosis, bakso.
+                                <p class="text-gray-700 mb-4">Seblak dengan tambahan seafood (udang/dumpling) udang yang
+                                    lezat, Kwetiau, kerupuk, makaroni, sayuran, sosis, bakso.
                                     Perpaduan rasa pedas dan segarnya udang yang menggoda.</p>
                                 <div class="flex items-center justify-between">
                                     <span class="text-primary font-bold text-xl">Rp 17.000</span>
@@ -533,8 +547,7 @@
                     <!-- Product 4 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="seblaktulang.jpg"
-                                alt="Seblak Ayam" class="w-full h-48 object-cover object-top">
+                            <img src="seblaktulang.jpg" alt="Seblak Ayam" class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Tulang</h3>
                                 <div class="flex items-center mb-3">
@@ -545,7 +558,8 @@
                                     </div>
                                     <span class="ml-2 text-sm text-gray-600">Level 3 - Sangat Pedas</span>
                                 </div>
-                                <p class="text-gray-700 mb-4">Seblak dengan tambahan potongan tulang ayam yang gurih, Kwetiau, kerupuk, makaroni,sayuran,sosis,bakso. Rasa
+                                <p class="text-gray-700 mb-4">Seblak dengan tambahan potongan tulang ayam yang gurih,
+                                    Kwetiau, kerupuk, makaroni,sayuran,sosis,bakso. Rasa
                                     pedas yang khas dengan tambahan protein sum-sum ayam.</p>
                                 <div class="flex items-center justify-between">
                                     <span class="text-primary font-bold text-xl">Rp 17.000</span>
@@ -558,8 +572,7 @@
                     <!-- Product 5 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="seblakceker.jpg"
-                                alt="Seblak Sapi" class="w-full h-48 object-cover object-top">
+                            <img src="seblakceker.jpg" alt="Seblak Sapi" class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Seblak Ceker</h3>
                                 <div class="flex items-center mb-3">
@@ -572,7 +585,8 @@
                                     </div>
                                     <span class="ml-2 text-sm text-gray-600">Level 2 - Pedas Sedang</span>
                                 </div>
-                                <p class="text-gray-700 mb-4">Seblak dengan tambahan irisan ceker ayam, Kwetiau, kerupuk, makaroni, sayuran, sosis, bakso. Perpaduan rasa
+                                <p class="text-gray-700 mb-4">Seblak dengan tambahan irisan ceker ayam, Kwetiau,
+                                    kerupuk, makaroni, sayuran, sosis, bakso. Perpaduan rasa
                                     pedas dan gurih ceker ayam dengan topping yang lezat.</p>
                                 <div class="flex items-center justify-between">
                                     <span class="text-primary font-bold text-xl">Rp 17.000</span>
@@ -585,8 +599,8 @@
                     <!-- Product 6 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="eskulkulpisang.jpg"
-                                alt="Es Kulkul Original" class="w-full h-48 object-cover object-top">
+                            <img src="eskulkulpisang.jpg" alt="Es Kulkul Original"
+                                class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Es Kulkul Pisang</h3>
                                 <div class="flex items-center mb-3">
@@ -595,7 +609,8 @@
                                     </div>
                                     <span class="ml-2 text-sm text-gray-600">Es Buah Campur Coklat Segar</span>
                                 </div>
-                                <p class="text-gray-700 mb-4">Es Kulkul dengan campuran susu, coklat, mesis, dan pisang yang
+                                <p class="text-gray-700 mb-4">Es Kulkul dengan campuran susu, coklat, mesis, dan pisang
+                                    yang
                                     segar. Cocok untuk menyegarkan setelah makan seblak pedas.</p>
                                 <div class="flex items-center justify-between">
                                     <span class="text-primary font-bold text-xl">Rp 3.500</span>
@@ -608,8 +623,8 @@
                     <!-- Product 7 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="eskulkulmelon.jpg"
-                                alt="Es Kulkul Durian" class="w-full h-48 object-cover object-top">
+                            <img src="eskulkulmelon.jpg" alt="Es Kulkul Durian"
+                                class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Es Kulkul Melon</h3>
                                 <div class="flex items-center mb-3">
@@ -631,8 +646,8 @@
                     <!-- Product 8 -->
                     <div class="carousel-item p-4">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card h-full">
-                            <img src="eskulkulsemangka.jpg"
-                                alt="Es Kulkul Coklat" class="w-full h-48 object-cover object-top">
+                            <img src="eskulkulsemangka.jpg" alt="Es Kulkul Coklat"
+                                class="w-full h-48 object-cover object-top">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-2">Es Kulkul Semangka</h3>
                                 <div class="flex items-center mb-3">
@@ -641,7 +656,8 @@
                                     </div>
                                     <span class="ml-2 text-sm text-gray-600">Es Buah Campur Coklat Segar</span>
                                 </div>
-                                <p class="text-gray-700 mb-4">Es Kulkul buah semangka dengan tambahan coklat premium. Perpaduan rasa
+                                <p class="text-gray-700 mb-4">Es Kulkul buah semangka dengan tambahan coklat premium.
+                                    Perpaduan rasa
                                     manis coklat dan segar nya buah semangka yang menggoda.</p>
                                 <div class="flex items-center justify-between">
                                     <span class="text-primary font-bold text-xl">Rp 3.500</span>
@@ -692,8 +708,7 @@
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 animate-fade-in" style="animation-delay: 0.6s;">
-                    <img src="diskonshope.png"
-                        alt="Paket Promo Seblak" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="diskonshope.png" alt="Paket Promo Seblak" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
@@ -778,7 +793,9 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-700">"Es Kulkul Semangka-nya enak banget! Rasa semangkanya berasa dan manis. Seblak-nya juga enak, level 3 sudah cukup bikin keringetan. Harganya juga worth it!"</p>
+                    <p class="text-gray-700">"Es Kulkul Semangka-nya enak banget! Rasa semangkanya berasa dan manis.
+                        Seblak-nya juga
+                        enak, level 3 sudah cukup bikin keringetan. Harganya juga worth it!"</p>
                     <p class="text-gray-500 text-sm mt-4">20 Mei 2025</p>
                 </div>
                 <!-- Testimonial 4 -->
@@ -864,94 +881,100 @@
                 </div>
             </div>
     </section>
-<!-- Location Section -->
-<section id="location" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12 animate-fade-in">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Lokasi Kami</h2>
-            <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-                Kunjungi toko kami untuk menikmati seblak dan es kulkul langsung di tempat.
-                Atau pesan online untuk pengiriman cepat ke lokasi Anda.
-            </p>
-        </div>
-        <div class="flex flex-col md:flex-row gap-8">
-            <!-- Peta di kiri -->
-            <div class="w-full md:w-1/2">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5148299185075!2d106.577293!3d-6.35755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjEnMjcuMiJTIDEwNsKwMzQnMzguMiJF!5e0!3m2!1sid!2sid!4v1716740000000!5m2!1sid!2sid"
-                    class="w-full h-full min-h-[400px] rounded-lg shadow-lg"
-                    style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+    <!-- Location Section -->
+    <section id="location" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Lokasi Kami</h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Kunjungi toko kami untuk menikmati seblak dan es kulkul langsung di tempat.
+                    Atau pesan online untuk pengiriman cepat ke lokasi Anda.
+                </p>
             </div>
-            
-            <!-- Informasi toko di kanan -->
-            <div class="w-full md:w-1/2">
-                <div class="bg-white rounded-lg p-6 shadow-md h-full">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Informasi Toko</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full mr-4 mt-1">
-                                <i class="ri-map-pin-fill text-primary"></i>
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Peta di kiri -->
+                <div class="w-full md:w-1/2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5148299185075!2d106.577293!3d-6.35755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjEnMjcuMiJTIDEwNsKwMzQnMzguMiJF!5e0!3m2!1sid!2sid!4v1716740000000!5m2!1sid!2sid"
+                        class="w-full h-full min-h-[400px] rounded-lg shadow-lg" style="border:0;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Informasi toko di kanan -->
+                <div class="w-full md:w-1/2">
+                    <div class="bg-white rounded-lg p-6 shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Informasi Toko</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-map-pin-fill text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Alamat</h4>
+                                    <p class="text-gray-700">Griya Parung Panjang, Blok B3F No.02, Desa.Kabasiran,
+                                        Kec.Parung Panjang, Kab.Bogor, 16360.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Alamat</h4>
-                                <p class="text-gray-700">Griya Parung Panjang, Blok B3F No.02, Desa.Kabasiran, Kec.Parung Panjang, Kab.Bogor, 16360.</p>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-time-fill text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Jam Operasional</h4>
+                                    <p class="text-gray-700">Senin - Minggu: 12:00 - 22:00 WIB</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-4 mt-1">
-                                <i class="ri-time-fill text-blue-500"></i>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-whatsapp-fill text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">WhatsApp</h4>
+                                    <p class="text-gray-700">0895611909642</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Jam Operasional</h4>
-                                <p class="text-gray-700">Senin - Minggu: 10:00 - 21:00 WIB</p>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-mail-fill text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-700">fitriayustikasari759@gmail.com</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full mr-4 mt-1">
-                                <i class="ri-whatsapp-fill text-green-600"></i>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-orange-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-shopping-cart-fill text-orange-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Shopee</h4>
+                                    <a href="https://spf.shopee.co.id/2fyrig86qo" class="text-primary hover:underline"
+                                        target="_blank">spf.shopee.co.id/2fyrig86qo</a>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">WhatsApp</h4>
-                                <p class="text-gray-700">0895611909642</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-full mr-4 mt-1">
-                                <i class="ri-mail-fill text-purple-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Email</h4>
-                                <p class="text-gray-700">fitriayustikasari759@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-orange-100 rounded-full mr-4 mt-1">
-                                <i class="ri-shopping-cart-fill text-orange-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Shopee</h4>
-                                <a href="https://spf.shopee.co.id/2fyrig86qo" class="text-primary hover:underline"
-                                    target="_blank">spf.shopee.co.id/2fyrig86qo</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full mr-4 mt-1">
-                                <i class="ri-motorbike-fill text-green-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">GoFood</h4>
-                                <a href="https://gofood.link/a/C77jE1U" class="text-primary hover:underline"
-                                    target="_blank">gofood.link/a/C77jE1U</a>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full mr-4 mt-1">
+                                    <i class="ri-motorbike-fill text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">GoFood</h4>
+                                    <a href="https://gofood.link/a/C77jE1U" class="text-primary hover:underline"
+                                        target="_blank">gofood.link/a/C77jE1U</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -1182,14 +1205,27 @@
                 <div>
                     <h3 class="text-lg font-bold mb-4">Menu Kami</h3>
                     <ul class="space-y-2">
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Special Komplit</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Biasa</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Seafood</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Tulang</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Ceker</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul Pisang</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul Melon</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul Semangka</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak Special
+                                Komplit</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak
+                                Biasa</a>
+                        </li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak
+                                Seafood</a>
+                        </li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak
+                                Tulang</a>
+                        </li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Seblak
+                                Ceker</a>
+                        </li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul
+                                Pisang</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul
+                                Melon</a>
+                        </li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Es Kulkul
+                                Semangka</a></li>
                     </ul>
                 </div>
                 <div>
@@ -1198,7 +1234,8 @@
                         <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Beranda</a></li>
                         <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
                         <li><a href="#testimonials"
-                                class="text-gray-400 hover:text-white transition-colors">Testimoni</a></li>
+                                class="text-gray-400 hover:text-white transition-colors">Testimoni</a>
+                        </li>
                         <li><a href="#location" class="text-gray-400 hover:text-white transition-colors">Lokasi</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Kontak</a></li>
                     </ul>
@@ -1208,7 +1245,8 @@
                     <ul class="space-y-2">
                         <li class="flex items-start">
                             <i class="ri-map-pin-fill mr-3 mt-1"></i>
-                            <span class="text-gray-400">Griya Parung Panjang, Blok B3F No.02, Desa.Kabasiran, Kec.Parung Panjang, Kab.Bogor, 16360.</span>
+                            <span class="text-gray-400">Griya Parung Panjang, Blok B3F No.02, Desa.Kabasiran, Kec.Parung
+                                Panjang, Kab.Bogor, 16360.</span>
                         </li>
                         <li class="flex items-center">
                             <i class="ri-phone-fill mr-3"></i>
@@ -1220,17 +1258,23 @@
                         </li>
                         <li class="flex items-center">
                             <i class="ri-time-fill mr-3"></i>
-                            <span class="text-gray-400">Senin - Minggu: 07:00 - 21:00 WIB</span>
+                            <span class="text-gray-400">Senin - Minggu: 12:00 - 22:00 WIB</span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-center md:text-left">&copy; 2025 🩵 Fikih Iskandar. All rights
-                    reserved.</p>
+                <p class="text-gray-400 text-center md:text-left">
+                    &copy; 2025 🩵
+                    <a href="https://portofolio-fikih-nur-iskandar.netlify.app" target="_blank"
+                        class="hover:text-white transition-colors">Fikih Iskandar</a>.
+                    All rights reserved.
+                </p>
                 <div class="flex items-center space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Kebijakan Privasi</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Syarat & Ketentuan</a>
+                    <a href="#privacy-policy" class="text-gray-400 hover:text-white transition-colors modal-trigger"
+                        data-modal="privacy-modal">Kebijakan Privasi</a>
+                    <a href="#terms-conditions" class="text-gray-400 hover:text-white transition-colors modal-trigger"
+                        data-modal="terms-modal">Syarat & Ketentuan</a>
                 </div>
             </div>
         </div>
@@ -1357,6 +1401,41 @@
             });
         });
     </script>
+    <script id="typing-animation-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const textElement = document.getElementById('typing-text');
+            const textToType = "Seblak Anjayyy - Fys";
+            let i = 0;
+            let isDeleting = false;
+            let typingSpeed = 150; // Kecepatan mengetik (ms)
+
+            function typeWriter() {
+                const currentText = textElement.textContent;
+
+                if (!isDeleting && i < textToType.length) {
+                    // Mode mengetik
+                    textElement.textContent = textToType.substring(0, i + 1);
+                    i++;
+                    typingSpeed = 150; // Kecepatan normal
+                } else if (isDeleting && i > 0) {
+                    // Mode menghapus
+                    textElement.textContent = textToType.substring(0, i - 1);
+                    i--;
+                    typingSpeed = 50; // Lebih cepat saat menghapus
+                } else {
+                    // Ganti mode
+                    isDeleting = !isDeleting;
+                    // Jeda sebelum mulai mengetik/hapus lagi
+                    typingSpeed = isDeleting ? 1500 : 500;
+                }
+
+                setTimeout(typeWriter, typingSpeed);
+            }
+
+            // Mulai animasi setelah 1 detik
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
     <script id="review-form-script">
         document.addEventListener('DOMContentLoaded', function () {
             // Rating Stars
@@ -1407,20 +1486,20 @@
                     }
                     // Set testimonial HTML
                     newTestimonial.innerHTML = `
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
-<i class="ri-user-fill text-gray-500"></i>
-</div>
-<div>
-<h4 class="font-bold text-gray-800">${name}</h4>
-<div class="flex">
-${starsHTML}
-</div>
-</div>
-</div>
-<p class="text-gray-700">"${comment}"</p>
-<p class="text-gray-500 text-sm mt-4">${date}</p>
-`;
+                    <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                    <i class="ri-user-fill text-gray-500"></i>
+                    </div>
+                    <div>
+                    <h4 class="font-bold text-gray-800">${name}</h4>
+                    <div class="flex">
+                    ${starsHTML}
+                    </div>
+                    </div>
+                    </div>
+                    <p class="text-gray-700">"${comment}"</p>
+                    <p class="text-gray-500 text-sm mt-4">${date}</p>
+                    `;
                     // Add new testimonial to the beginning of the container
                     testimonialContainer.insertBefore(newTestimonial, testimonialContainer.firstChild);
                     // Reset form
@@ -1483,7 +1562,7 @@ ${starsHTML}
                     // Prepare WhatsApp message
                     let message = `Halo Seblak Anjayyy, saya ingin memesan:%0A%0A`;
                     message += `Nama: ${name}%0A`;
-                    message += `No. HP: ${phone}%0A`;
+                    message += `No.HP: ${phone}%0A`;
                     message += `Alamat: ${address}%0A%0A`;
                     message += `Pesanan:%0A`;
                     selectedMenus.forEach(menu => {
@@ -1535,6 +1614,46 @@ ${starsHTML}
                         });
                     }
                 });
+            });
+        });
+    </script>
+    <script id="modal-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Modal trigger
+            const modalTriggers = document.querySelectorAll('.modal-trigger');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.modal-close');
+
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const modalId = this.getAttribute('data-modal');
+                    document.getElementById(modalId).classList.remove('hidden');
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    this.closest('.modal').classList.add('hidden');
+                });
+            });
+
+            // Close modal when clicking outside
+            modals.forEach(modal => {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        this.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Close modal with ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        modal.classList.add('hidden');
+                    });
+                }
             });
         });
     </script>
